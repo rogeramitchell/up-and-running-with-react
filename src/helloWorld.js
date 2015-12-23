@@ -8,3 +8,5 @@ var HelloWorld = React.createClass({
 			);
 	}
 });
+
+React.render(<HelloWorld />, document.body);
