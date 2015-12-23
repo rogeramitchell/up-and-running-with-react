@@ -1,13 +1,21 @@
 var Note = React.createClass({
+	getInitialState: function() {
+		return {editing: false}
+	},
+
 	edit: function() {
-		alert('whoa editing note dude');
+		this.setState({editing: true});
+	},
+
+	save: function() {
+		this.setState({editing: false});
 	},
 
 	remove: function() {
 		alert('whoa... deleting this forever!');
 	},
 
-	render: function() {
+	renderDisplay: function() {
 		return (
 				<div className="rectangularNote">
 					<span>
@@ -17,6 +25,25 @@ var Note = React.createClass({
 					<p>{this.props.children}</p>
 				</div>
 			);
+	},
+
+	renderForm: function() {
+		return (
+				<div className="note">
+					<span>
+						<textarea defaultValue={this.props.children} className="form-control"></textarea>
+						<button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+					</span>
+				</div>
+			);
+	},
+
+	render: function() {
+		if(this.state.editing) {
+			return this.renderForm();
+		} else {
+			return this.renderDisplay();
+		}
 	}
 });
 
