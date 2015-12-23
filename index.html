@@ -9,8 +9,15 @@
     <title>My First React File</title>
 </head>
 <body>
-    <script src="build/HelloWorld.js">
-    	
+	<div id="react-container"></div>
+    <script type="text/babel">
+    	var MyComponent = React.createClass({
+    		render: function() {
+    			return <div>My React Component</div>
+    		}
+    	});
+
+    	React.render(<MyComponent />, document.getElementById('react-container'));
     </script>
 </body>
 </html>
