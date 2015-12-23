@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- JQuery and JQuery UI-->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <!-- Core React Dependencies-->
     <script src="https://fb.me/react-0.14.3.min.js"></script>
     <script src="https://fb.me/react-dom-0.14.3.min.js"></script>
+
 	<!-- Babel Dependency -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+	<!-- My Fun CSS File -->
+	<link rel="stylesheet" href="src/fun.css" type="text/css">
+
     <title>My First React File</title>
 </head>
 <body>
 	<div id="react-container"></div>
-    <script type="text/babel">
-    	var MyComponent = React.createClass({
-    		render: function() {
-    			return 	<div>
-    						<h1>{this.props.text}</h1>
-    						<h4>{this.props.merr}</h4>
-    						<p>{this.props.children}</p>
-    					</div>;
-    		}
-    	});
-
-    	React.render(<div>
-    				<MyComponent text="Hello world" merr="YES!">
-    					Wow. This is fun. This is a child of the MyComponent.
-    				</MyComponent>
-    				<MyComponent text="Blah blah blah" merr="Cows."/>
-    				<MyComponent text="Hello again" merr="Fun stuff"/>
-    				</div>
-    		, document.getElementById('react-container'));
-    </script>
+    <script src="src/note.js" type="text/babel"></script>
 </body>
 </html>
